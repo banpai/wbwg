@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/courtyard/EditEquipment.css">
+</head>
+<body>
+  <div id="list">
+      <div id="header">
+          <div class="arrow" id="closeWin">
+              <img src="../../image/return.png" alt="">
+          </div>
+          <div class="zline"></div>
+          编辑器材
+          <div class="asubmit" id="pkh_add_su" @click="save">保存</div>
+      </div>
+      <div class="container">
+          <div  class="pk_togger" style="margin-top: 70px;" v-cloak>
+              <div v-for="(item,index) in items">
+                <cell-component celltitle="器材名称" myclass="pk_mem_input_all">
+                   <input type="text" v-model="item.equipmentName"  v-bind:readonly="isClick" name="" placeholder="请输入" />
+               </cell-component>
+               <cell-component celltitle="配置时间" myclass="bg_j pk_mem_input" >
+                  <input type="text" v-model="item.configurationtime" @click.stop="chooseTime(index)"  readonly="readonly" name="" placeholder="请选择" />
+              </cell-component>
+              <div class="clear"></div>
+                <div class="members" @click.stop="del(index)">删除</div>
+              <div class="divide"></div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <script type="text/javascript" src="../../script/api.js"></script>
+  <script type="text/javascript" src="../../script/UICore.js"></script>
+  <script type="text/javascript" src="../../script/vue.js"></script>
+  <script type="text/javascript" src="../../script/courtyard/EditEquipment.js"></script>
+</body>
+<template id="cellInfo">
+  <div class="er_templ">
+    <div class="er_templ_in">
+      <div class="er_lable">{{celltitle}}</div>
+        <div :class="myclass">
+          <slot></slot>
+        </div>
+    </div>
+  </div>
+</template>
+</html>

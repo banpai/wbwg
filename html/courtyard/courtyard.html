@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>新增小区</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <!-- <link rel="stylesheet" href="../../css/mint-ui.css"> -->
+    <link rel="stylesheet" href="../../css/courtyard/courtyard.css">
+</head>
+
+<body>
+    <div id="list">
+        <div id="header">
+            <div class="arrow" @click="closeWin">
+                <img src="../../image/return.png" alt="">
+            </div>
+            <div class="zline"></div>
+            新增小区
+            <div class="asubmit" @click="submit" id="pkh_add_su">提交</div>
+        </div>
+        <div class="container" v-cloak>
+            <div class="pk_togger" style="margin-top: 70px;">
+                 <cell-component celltitle="小区名称" myclass="pk_mem_input_all">
+                    <input type="text" v-model="courtyardName"  v-bind:readonly="isClick" name="" placeholder="请输入-必填" />
+                </cell-component>
+               <cell-component celltitle="建筑地址" myclass="pk_mem_input_all">
+                    <input type="text"  v-model="address" name="" v-bind:readonly="isClick" placeholder="请输入-必填" />
+                </cell-component>
+                  <div class="clear dynamic"></div>
+                <cell-component celltitle="建筑栋数" myclass="pk_mem_input_all">
+                    <input type="text" name="" v-model="buildnum" placeholder="请输入-必填" />
+                </cell-component>
+
+                <cell-component celltitle="开发单位" myclass="pk_mem_input_all">
+                    <input type="text" v-bind:readonly="isClick" name=""v-bind:readonly="isClick" v-model="developunit" placeholder="请输入-必填">
+                </cell-component>
+
+                <cell-component celltitle="建设单位:" myclass="pk_mem_input_all">
+                    <input type="text"  v-model="constructunit"v-bind:readonly="isClick" name=""  placeholder="请输入" />
+                </cell-component>
+                <div class="clear dynamic"></div>
+                <cell-component celltitle="建成时间:" myclass="bg_j pk_mem_input">
+                    <input type="text" @click="completetimef" v-model="completetime"readonly="readonly" name=""  placeholder="请选择" />
+                </cell-component>
+
+                <cell-component celltitle="占地面积(㎡)" myclass="pk_mem_input_all">
+                    <input type="text" v-bind:readonly="isClick" name="" v-bind:readonly="isClick"v-model="floorarea" placeholder="请输入" />
+                </cell-component>
+                <cell-component celltitle="绿化面积(㎡)" myclass="pk_mem_input_all">
+                    <input type="text" v-bind:readonly="isClick" name="" v-bind:readonly="isClick"v-model="greenArea" placeholder="请输入" />
+                </cell-component>
+                <div class="clear dynamic"></div>
+                <cell-component celltitle="建筑面积(㎡)" myclass="pk_mem_input_all">
+                    <input type="text" v-bind:readonly="isClick" name=""v-bind:readonly="isClick" v-model="structureArea" placeholder="请输入" />
+                </cell-component>
+                <cell-component celltitle="雨水井(个)" myclass="pk_mem_input_all">
+                    <input type="text" v-bind:readonly="isClick" name="" v-bind:readonly="isClick"v-model="rainwell" placeholder="请输入" />
+                </cell-component>
+                <cell-component celltitle="污水井(个)" myclass="pk_mem_input_all">
+                    <input type="text" v-bind:readonly="isClick" name="" v-bind:readonly="isClick"v-model="Sewagewell" placeholder="请输入" />
+                </cell-component>
+                <div class="clear dynamic"></div>
+                <cell-component celltitle="通讯设施井(个)" myclass="pk_mem_input_all">
+                    <input type="text" v-bind:readonly="isClick" name=""v-bind:readonly="isClick" v-model="contactwell" placeholder="请输入" />
+                </cell-component>
+                <cell-component celltitle="暖气井(个)" myclass="pk_mem_input_all">
+                    <input type="text" v-bind:readonly="isClick" name="" v-bind:readonly="isClick"v-model="heatwell" placeholder="请输入" />
+                </cell-component>
+                <cell-component celltitle="自来水井(个)" myclass="pk_mem_input_all">
+                    <input type="text" v-bind:readonly="isClick" name=""v-bind:readonly="isClick" v-model="waterwell" placeholder="请输入" />
+                </cell-component>
+                <div class="clear dynamic"></div>
+                <cell-component celltitle="健身场所" myclass="bg_j pk_mem_input">
+                  <input type="text" @click="fitplacef" name=""readonly="readonly" v-model="fitplace" placeholder="请选择" />
+                </cell-component>
+                <cell-component celltitle="健身器材" myclass="pk_mem_input">
+                  <div class="imap">
+                      <input type="number" v-bind:readonly="isClick" v-model="fitequip" name="" placeholder="请输入" />
+                  </div>
+                  <span>
+                    <input type="text" name="" @click="fitequipf" readonly="readonly" placeholder="请选择"/>
+                </span>
+                </cell-component>
+                <cell-component celltitle="配置单位" myclass="pk_mem_input_all">
+                    <input type="text" v-bind:readonly="isClick" name="" v-bind:readonly="isClick"v-model="allocaunit" placeholder="请输入" />
+                </cell-component>
+                <div class="clear dynamic"></div>
+                <cell-component celltitle="电子监控系统" myclass="bg_j pk_mem_input">
+                    <input type="text" @click="electronicsystemf" v-model="electronicsystem"readonly="readonly" name=""  placeholder="请选择" />
+                </cell-component>
+                <cell-component celltitle="摄像头" myclass="pk_mem_input_all">
+                    <input type="text" v-bind:readonly="isClick" name="" v-model="camera" placeholder="请输入" />
+                </cell-component>
+                <cell-component celltitle="设备标准" myclass="bg_j pk_mem_input">
+                  <input type="text" @click="equipstandardf" v-model="equipstandard"readonly="readonly" name=""  placeholder="请选择" />
+                </cell-component>
+                <cell-component celltitle="配置单位" myclass="pk_mem_input_all">
+                  <input type="text" v-bind:readonly="isClick" name="" v-model="allocaunits" placeholder="请输入" />
+                </cell-component>
+
+                <div class="clear"></div>
+                <div class="er_templ" v-for="(expand,index) of expandTab_arr">
+                    <div class="er_templ_in">
+                        <div class="er_lable">{{expand.name}}</div>
+                        <div class="bg_j pk_mem_input">
+                            <input @click="expandselect(index,expand.english_name,expand.name)" v-model="expand.value" readonly="readonly" type="text" name=""  v-bind:placeholder="chcek" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../script/api.js"></script>
+    <script type="text/javascript" src="../../script/vue.js"></script>
+    <!-- <script type="text/javascript" src="../../script/mint-ui.js"></script> -->
+    <script type="text/javascript" src="../../script/UICore.js"></script>
+    <script type="text/javascript" src="../../script/courtyard/courtyard.js"></script>
+</body>
+<template id="cellInfo">
+  <div class="er_templ">
+    <div class="er_templ_in">
+      <div class="er_lable">{{celltitle}}</div>
+        <div :class="myclass">
+          <slot></slot>
+        </div>
+    </div>
+  </div>
+</template>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" href="../css/work/work.css">
+</head>
+<body>
+    <div class="logoimg">
+        <img src="../image/bgbg.png" alt="">
+    </div>
+    <div id="home" >
+        <div class="content" style="display:none;height:100%;padding-top:100px;">
+          <div class="template">
+            <div class="title">
+              <div class="title_name">采集</div>
+            </div>
+            <div class="temp_list">
+              <div class="temp_cur"  @click="rkxx()">
+                <div class="simg"><img src="../image/home/rkxx.png" /></div>
+                <span>人口信息</span>
+              </div>
+              <div class="temp_cur" v-on:click="frxx()">
+                <div class="simg"><img src="../image/home/frxx.png" /></div>
+                <span>单位信息</span>
+              </div>
+              <div class="temp_cur" v-on:click="ldxx()">
+                <div class="simg"><img src="../image/home/ldxx.png" /></div>
+                <span>楼栋信息</span>
+              </div>
+              <div class="temp_cur brn" v-on:click="fwxx()">
+                <div class="simg"><img src="../image/home/fwxx.png" /></div>
+                <span>房屋信息</span>
+              </div>
+              <div class="temp_cur" v-on:click="fhxx()">
+               <div class="simg"><img src="../image/home/fhxx.png" /></div>
+               <span>户籍信息</span>
+              </div>
+              <div class="temp_cur" v-on:click="csbj()">
+                <div class="simg"><img src="../image/home/csbj.png" /></div>
+                <span>城市部件</span>
+              </div>
+              <div class="temp_cur" v-on:click="xqyl()">
+                <div class="simg"><img src="../image/home/csbj.png" /></div>
+                <span>小区院落</span>
+              </div>
+              <div class="temp_cur">
+
+              </div>
+              <div class="ckear_both"></div>
+            </div>
+          </div>
+
+          <div class="template">
+            <div class="title">
+              <div class="title_name">办公</div>
+            </div>
+            <div class="temp_list">
+              <div class="temp_cur"  v-on:click="sjsb()">
+                <div class="simg"><img src="../image/home/sjsb.png" /></div>
+                <span>事件上报</span>
+              </div>
+              <div class="temp_cur" v-on:click="sjsp()">
+                <div class="simg"><img src="../image/home/sjsp.png" /></div>
+                <span>事件办理</span>
+              </div>
+              <div class="temp_cur" v-on:click="wfqd()">
+                <div class="simg"><img src="../image/home/wdsj.png" /></div>
+                <span>我的事件</span>
+              </div>
+              <div class="temp_cur brn">
+
+              </div>
+            </div>
+            <div class="ckear_both"></div>
+          </div>
+
+          <div class="template">
+            <div class="title">
+              <div class="title_name">民情日志</div>
+            </div>
+            <div class="temp_list">
+              <div class="temp_cur"  v-on:click="xzrz()">
+                <div class="simg"><img src="../image/home/xzrz.png" /></div>
+                <span>新增日志</span>
+              </div>
+              <div class="temp_cur" v-on:click="rzcx()">
+                <div class="simg"><img src="../image/home/rzcx.png" /></div>
+                <span>日志查询</span>
+              </div>
+              <div class="temp_cur">
+
+              </div>
+              <div class="temp_cur brn">
+
+              </div>
+            </div>
+            <div class="ckear_both"></div>
+          </div>
+
+          <!-- <div class="template">
+            <div class="title">
+              <div class="title_name">资讯</div>
+            </div>
+            <div class="temp_list">
+              <div class="temp_cur"  v-on:click="tzgg()">
+                <div class="simg"><img src="../image/home/tzgg.png" /></div>
+                <span>通知公告</span>
+              </div>
+              <div class="temp_cur" v-on:click="wxgzh()">
+                <div class="simg"><img src="../image/home/wxgzh.png" /></div>
+                <span>微信公众号</span>
+              </div>
+              <div class="temp_cur">
+
+              </div>
+              <div class="temp_cur brn">
+
+              </div>
+            </div>
+            <div class="ckear_both"></div>
+          </div> -->
+        </div>
+    </div>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript" src="../script/vue.js"></script>
+    <script type="text/javascript" src="../script/UICore.js"></script>
+    <script type="text/javascript" src="../script/home.js"></script>
+</body>
+</html>
