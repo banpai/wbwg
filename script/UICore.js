@@ -2,11 +2,11 @@
     UICore = function() {};
     UICore.prototype = {
         // serviceUrl: "http://192.168.2.148:8080/",
-        serviceUrl: "http://61.160.70.170:8889/",
-        //  serviceUrl: "http://10.33.0.23:8080/",
-        mapServiceUrl:"http://61.185.20.73:58888/",
-        // mapServiceUrl:"http://10.33.0.23:8080/",】
-        
+        // serviceUrl: "http://61.160.70.170:8889/",
+         serviceUrl: "http://10.33.0.23:8080/",
+        // mapServiceUrl:"http://61.185.20.73:58888/",
+        mapServiceUrl:"http://10.33.0.23:8080/",
+
         flowId: "TEST",
         showLoading: function(title, text) {
             api.showProgress({
